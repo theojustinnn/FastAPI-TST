@@ -24,12 +24,12 @@ data_mahasiswa = {
 
 # Define path for view data
 @app.get("/view")
-def view_name():
+async def view_name():
     return data_mahasiswa
 
 # Define path for add data
-@app.post("/add/{id}")
-def add_name(id: int, identitas: Identitas):
+@app.post("/add")
+async def add_name(id: int, identitas: Identitas):
     if id in data_mahasiswa:
         return {"Error" : "Mahasiswa Sudah Terdaftar"}
     data_mahasiswa[id] = {"Nama" : identitas.Name, "NIM" : identitas.NIM}
