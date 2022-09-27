@@ -17,8 +17,8 @@ class Identitas(BaseModel):
 # Create data
 data_mahasiswa = {
     1: {
-        "Nama": "Theodore Justin",
-        "NIM" : 18220011
+        "Nama": "Dummy",
+        "NIM" : 0
     }
 }
 
@@ -29,8 +29,8 @@ async def view_name():
 
 # Define path for add data
 @app.post("/add")
-async def add_name(id: int, identitas: Identitas):
-    if id in data_mahasiswa:
+async def add_name(identitas: Identitas):
+    if identitas.NIM in data_mahasiswa:
         return {"Error" : "Mahasiswa Sudah Terdaftar"}
-    data_mahasiswa[id] = {"Nama" : identitas.Name, "NIM" : identitas.NIM}
+    data_mahasiswa[identitas.NIM] = {"Nama" : identitas.Name, "NIM" : identitas.NIM}
     return data_mahasiswa
