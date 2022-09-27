@@ -33,4 +33,4 @@ def add_name(id: int, identitas: Identitas):
     if id in data_mahasiswa:
         return {"Error" : "Mahasiswa Sudah Terdaftar"}
     data_mahasiswa[id] = {"Nama" : identitas.Name, "NIM" : identitas.NIM}
-    return data_mahasiswa[id]
+    return data_mahasiswa
