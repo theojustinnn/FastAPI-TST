@@ -1,4 +1,4 @@
-# Tugas FastAPI
+# FastAPI Assignment
 This repository was made for an assignment of Integrated System Technology
 
 This repository consists of three files:
